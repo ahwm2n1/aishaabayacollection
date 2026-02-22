@@ -1,0 +1,151 @@
+/* ======================
+   BOTTOM NAVBAR STYLES
+====================== */
+
+.bottom-navbar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-left: 5%;
+    width: 90%;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    background: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border: 1px solid #333;
+    padding: 8px 0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background: rgba(155, 155, 155, 0.95);
+}
+
+.bottom-nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.bottom-nav-item i {
+    font-size: 22px;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.bottom-nav-item span {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* Active State */
+.bottom-nav-item.active {
+    color: #000;
+}
+
+.bottom-nav-item.active i {
+    transform: translateY(-2px);
+}
+
+/* Hover Effect */
+.bottom-nav-item:hover {
+    background: #f5f5f5;
+}
+
+/* Cart Badge */
+.cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ff4444;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+/* Animation for active item */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.bottom-nav-item.active i {
+    animation: bounce 0.5s ease infinite;
+}
+
+/* Mobile View - Only show on mobile */
+@media (max-width: 768px) {
+    .bottom-navbar {
+        display: block;
+    }
+
+    /* Add padding to body bottom to avoid content hiding behind navbar */
+    body {
+        padding-bottom: 70px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .bottom-nav-item i {
+        font-size: 20px;
+    }
+
+    .bottom-nav-item span {
+        font-size: 10px;
+    }
+
+    .bottom-nav-item {
+        padding: 5px 8px;
+    }
+}
+
+/* Optional: Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .bottom-navbar {
+        background: rgba(10, 10, 10, 0.1);
+        border-top-color: #d18282;
+    }
+
+    .bottom-nav-item {
+        color: #b58b6b;
+    }
+
+    .bottom-nav-item.active {
+        color: #c19b7d;
+    }
+
+    .bottom-nav-item:hover {
+        background: #333;
+    }
+}

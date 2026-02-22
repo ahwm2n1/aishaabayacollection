@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Contact Us - Aisha Abayas Collection | Premium Islamic Fashion</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/bottom-navbar.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/releted-product.css">
+    
+    <style>
+        /* Basic inline styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fff; color: #1e1e1e; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 30px; }
+        img { max-width: 100%; display: block; }
+        
+        /* Map placeholder styling */
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(201, 162, 126, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            backdrop-filter: blur(2px);
+        }
+        
+        .map-overlay i {
+            font-size: 60px;
+            color: var(--accent);
+            opacity: 0.8;
+        }
+        
+        .map-overlay p {
+            font-size: 18px;
+            color: var(--text-dark);
+            font-weight: 500;
+            background: white;
+            padding: 12px 30px;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-md);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===================================== -->
+<!-- ANNOUNCEMENT BAR -->
+<!-- ===================================== -->
+<div class="announcement-bar">
+    <div class="container">
+        <p><i class="fa-regular fa-headset"></i> We're here to help! Contact us anytime | Response within 24 hours</p>
+    </div>
+</div>
+
+<!-- ===================================== -->
+<!-- HEADER SECTION - Navbar loaded from separate file -->
+<!-- ===================================== -->
+<div id="navbar"></div>
+
+
+    <!-- Bottom Navbar Container (mobile) -->
+    <div id="bottom-navbar"></div>
+    
+
+<!-- ===================================== -->
+<!-- PAGE HEADER / BANNER -->
+<!-- ===================================== -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Contact <span class="highlight">Us</span></h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Contact Us</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================== -->
+<!-- CONTACT INFO CARDS SECTION -->
+<!-- ===================================== -->
+<section class="contact-info-cards">
+    <div class="container">
+        <div class="info-cards-grid">
+            <!-- Card 1: Phone -->
+            <div class="info-card animate-on-scroll">
+                <div class="info-icon">
+                    <i class="fa-solid fa-phone-volume"></i>
+                </div>
+                <h3>Call Us</h3>
+                <p class="info-detail">+92 300 1234567</p>
+                <p class="info-detail">+92 321 7654321</p>
+                <p class="info-note">Mon-Fri, 9am to 6pm PKT</p>
+            </div>
+            
+            <!-- Card 2: Email -->
+            <div class="info-card animate-on-scroll" data-delay="0.1s">
+                <div class="info-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <h3>Email Us</h3>
+                <p class="info-detail">info@aishaabayas.com</p>
+                <p class="info-detail">support@aishaabayas.com</p>
+                <p class="info-note">24/7, We respond within 24h</p>
+            </div>
+            
+            <!-- Card 3: WhatsApp -->
+            <div class="info-card animate-on-scroll" data-delay="0.2s">
+                <div class="info-icon whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp</h3>
+                <p class="info-detail">+92 300 1234567</p>
+                <p class="info-detail">+92 321 7654321</p>
+                <p class="info-note">Quickest response on WhatsApp</p>
+                <a href="https://wa.me/923001234567" target="_blank" class="whatsapp-btn">Chat Now <i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            
+            <!-- Card 4: Location -->
+            <div class="info-card animate-on-scroll" data-delay="0.3s">
+                <div class="info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h3>Visit Us</h3>
+                <p class="info-detail">Shop #5, Elegance Mall</p>
+                <p class="info-detail">Main Boulevard, Karachi</p>
+                <p class="info-note">Pakistan, 75500</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================== -->
+<!-- CONTACT FORM & MAP SECTION -->
+<!-- ===================================== -->
+<section class="contact-form-section">
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Left Side: Contact Form -->
+            <div class="contact-form-wrapper animate-on-scroll">
+                <div class="section-header left">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2 class="section-title">Send Us a <span class="highlight">Message</span></h2>
+                    <p class="section-description">Have a question about our products or need styling advice? Fill out the form below and we'll get back to you within 24 hours.</p>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                            <i class="fa-regular fa-user input-icon"></i>
+                        </div>
+                        <div class="form-group half">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+                            <i class="fa-regular fa-user input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        <i class="fa-regular fa-envelope input-icon"></i>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567" required>
+                        <i class="fa-regular fa-phone input-icon"></i>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="required">*</span></label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="order">Order Related</option>
+                            <option value="product">Product Question</option>
+                            <option value="returns">Returns & Exchanges</option>
+                            <option value="wholesale">Wholesale/Bulk Order</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <i class="fa-regular fa-chevron-down select-icon"></i>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6" placeholder="How can we help you today?" required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="privacy" required>
+                            <span>I agree to the <a href="contact.html">Privacy Policy</a> and consent to being contacted regarding my inquiry. <span class="required">*</span></span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+            
+            <!-- Right Side: Map & Additional Info -->
+            <div class="contact-info-wrapper animate-on-scroll" data-delay="0.2s">
+                <!-- Map Box -->
+                <div class="map-box">
+                    <h3><i class="fa-solid fa-map-pin"></i> Our Location</h3>
+                    <div class="map-container">
+                        <!-- Map placeholder - in real project, embed Google Maps -->
+                        <div class="map-placeholder">
+                            <img src="images/map-placeholder.jpg" alt="Map Location" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="map-overlay">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Aisha Abayas Collection, Karachi</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-address">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Shop #5, Elegance Mall, Main Boulevard, Karachi, Pakistan 75500</span>
+                    </div>
+                </div>
+                
+                <!-- Business Hours -->
+                <div class="business-hours">
+                    <h3><i class="fa-regular fa-clock"></i> Business Hours</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">9:00 AM - 6:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Saturday</span>
+                            <span class="time">10:00 AM - 4:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Sunday</span>
+                            <span class="time closed">Closed</span>
+                        </li>
+                        <li>
+                            <span class="day">Public Holidays</span>
+                            <span class="time closed">Closed</span>
+                        </li>
+                    </ul>
+                    <p class="hours-note">*Customer support available 24/7 via email and WhatsApp</p>
+                </div>
+                
+                <!-- Quick Response Guarantee -->
+                <div class="response-guarantee">
+                    <div class="guarantee-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div class="guarantee-text">
+                        <h4>24-Hour Response Guarantee</h4>
+                        <p>We value your time. All inquiries are answered within 24 hours on business days.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================== -->
+<!-- FAQ MINI SECTION (CONTACT SPECIFIC) -->
+<!-- ===================================== -->
+<section class="contact-faq-section alt-bg">
+    <div class="container">
+        <div class="section-header centered">
+            <h2>Frequently Asked <span class="highlight">Contact Questions</span></h2>
+            <p>Quick answers to common inquiries</p>
+        </div>
+        
+        <div class="faq-mini-grid">
+            <div class="faq-mini-item animate-on-scroll">
+                <h3><i class="fa-regular fa-clock"></i> How quickly do you respond?</h3>
+                <p>We respond to all inquiries within 24 hours on business days. WhatsApp messages are typically answered within a few hours.</p>
+            </div>
+            
+            <div class="faq-mini-item animate-on-scroll" data-delay="0.1s">
+                <h3><i class="fa-regular fa-truck"></i> Can I track my order?</h3>
+                <p>Yes! Once your order ships, you'll receive a tracking number via email and WhatsApp. You can also contact us for updates.</p>
+            </div>
+            
+            <div class="faq-mini-item animate-on-scroll" data-delay="0.2s">
+                <h3><i class="fa-regular fa-rotate-left"></i> How do I return an item?</h3>
+                <p>Email us with your order number and reason for return. We'll guide you through the process within 14 days of delivery.</p>
+            </div>
+            
+            <div class="faq-mini-item animate-on-scroll" data-delay="0.3s">
+                <h3><i class="fa-regular fa-credit-card"></i> Do you offer wholesale?</h3>
+                <p>Yes, we offer wholesale pricing for boutiques and resellers. Please contact us with your business details.</p>
+            </div>
+        </div>
+        
+        <div class="view-all-container">
+            <a href="faq.html" class="view-all-btn">Visit Full FAQ <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================== -->
+<!-- SOCIAL CONNECT SECTION -->
+<!-- ===================================== -->
+<section class="social-connect-section">
+    <div class="container">
+        <div class="social-connect-wrapper">
+            <div class="social-connect-content">
+                <h2>Connect With <span class="highlight">Us</span></h2>
+                <p>Follow us on social media for daily inspiration, new arrivals, and exclusive offers</p>
+            </div>
+            
+            <div class="social-connect-grid">
+                <a href="https://www.instagram.com/aishaabayascollection?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-connect-item instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    <div class="social-connect-info">
+                        <span class="social-platform">Instagram</span>
+                        <span class="social-handle">@aishaabayascollection</span>
+                    </div>
+                    <span class="social-follow">Follow</span>
+                </a>
+                
+                <a href="https://www.instagram.com/aishaabayascollection?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
+" target="_blank" class="social-connect-item facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <div class="social-connect-info">
+                        <span class="social-platform">Facebook</span>
+                        <span class="social-handle">/aishaabayas</span>
+                    </div>
+                    <span class="social-follow">Like</span>
+                </a>
+                
+                <a href="https://www.instagram.com/aishaabayascollection?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
+" target="_blank" class="social-connect-item tiktok">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <div class="social-connect-info">
+                        <span class="social-platform">TikTok</span>
+                        <span class="social-handle">@aishaabayas</span>
+                    </div>
+                    <span class="social-follow">Follow</span>
+                </a>
+                
+                <a href="https://wa.me/923001234567" target="_blank" class="social-connect-item whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div class="social-connect-info">
+                        <span class="social-platform">WhatsApp</span>
+                        <span class="social-handle">+92 300 1234567</span>
+                    </div>
+                    <span class="social-follow">Chat</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================== -->
+<!-- NEWSLETTER SECTION -->
+<!-- ===================================== -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-wrapper">
+            <h3>Subscribe to our newsletter</h3>
+            <p>Get 10% off your first order and receive updates about new collections</p>
+            
+            <form class="newsletter-form" id="newsletterForm">
+                <div class="newsletter-input-group">
+                    <input type="email" placeholder="Enter your email" required id="newsletterEmail">
+                    <button type="submit">Subscribe</button>
+                </div>
+                <label class="checkbox-label">
+                    <input type="checkbox" required>
+                    <span>I agree to receive marketing emails</span>
+                </label>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================== -->
+<!-- FOOTER SECTION -->
+<!-- ===================================== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Column 1: Logo & About -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <span class="logo-text">AISHA</span>
+                    <span class="logo-subtext">ABAYAS COLLECTION</span>
+                </div>
+                <p class="footer-about">Premium Islamic fashion for the modern woman. Quality abayas, hijabs, and accessories since 2020.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/aishaabayascollection?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
+" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/aishaabayascollection?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/aishaabayascollection?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
+" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 3: Policies -->
+            <div class="footer-col">
+                <h4>Policies</h4>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Refund Policy</a></li>
+                    <li><a href="contact.html">Shipping Policy</a></li>
+                    <li><a href="contact.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 4: Contact & Payment -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li><i class="fa-regular fa-envelope"></i> info@aishaabayas.com</li>
+                    <li><i class="fa-regular fa-phone"></i> +92 300 1234567</li>
+                </ul>
+                
+                <h4 style="margin-top: 20px;">We Accept</h4>
+                <div class="payment-icons">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aisha Abayas Collection. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ===================================== -->
+<!-- CHATBOT -->
+<!-- ===================================== -->
+<button class="chatbot-btn" id="chatbotBtn">
+    <i class="fa-regular fa-comment-dots"></i>
+</button>
+
+<div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+        <h3><i class="fa-regular fa-comment"></i> Aisha Assistant</h3>
+        <button class="chatbot-close" id="chatbotClose"><i class="fa-solid fa-times"></i></button>
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot">
+            <p>👋 Assalamu Alaikum! How can I help you today?</p>
+        </div>
+    </div>
+    <div class="chatbot-input">
+        <input type="text" placeholder="Type your message..." id="chatbotInput">
+        <button id="chatbotSend"><i class="fa-regular fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<!-- ===================================== -->
+<!-- BACK TO TOP BUTTON -->
+<!-- ===================================== -->
+<button class="back-to-top" id="backToTop">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- ===================================== -->
+<!-- SCRIPTS -->
+<!-- ===================================== -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navbar.js"></script>
+
+<script>
+    // Contact page specific interactions
+    document.addEventListener('DOMContentLoaded', function() {
+        // Scroll animation trigger
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        function checkScroll() {
+            animateElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                if (rect.top < windowHeight * 0.85) {
+                    el.classList.add('animated');
+                }
+            });
+        }
+        
+        checkScroll();
+        window.addEventListener('scroll', checkScroll);
+        
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Chatbot functionality
+        const chatbotBtn = document.getElementById('chatbotBtn');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotClose = document.getElementById('chatbotClose');
+        const chatbotSend = document.getElementById('chatbotSend');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        
+        chatbotBtn.addEventListener('click', function() {
+            chatbotWindow.classList.toggle('active');
+        });
+        
+        chatbotClose.addEventListener('click', function() {
+            chatbotWindow.classList.remove('active');
+        });
+        
+        chatbotSend.addEventListener('click', function() {
+            sendMessage();
+        });
+        
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (message === '') return;
+            
+            const userMsgDiv = document.createElement('div');
+            userMsgDiv.className = 'message user';
+            userMsgDiv.innerHTML = `<p>${message}</p>`;
+            chatbotMessages.appendChild(userMsgDiv);
+            
+            chatbotInput.value = '';
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            
+            setTimeout(() => {
+                const botMsgDiv = document.createElement('div');
+                botMsgDiv.className = 'message bot';
+                botMsgDiv.innerHTML = `<p>Thank you for your message! Our team will get back to you soon. For immediate assistance, please WhatsApp us at +92 300 1234567.</p>`;
+                chatbotMessages.appendChild(botMsgDiv);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }, 1000);
+        }
+        
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            formStatus.innerHTML = '';
+            formStatus.className = 'form-status';
+            
+            // Simple validation
+            const firstName = document.getElementById('firstName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value.trim();
+            const privacy = document.querySelector('input[name="privacy"]').checked;
+            
+            if (!firstName || !email || !phone || !subject || !message || !privacy) {
+                formStatus.innerHTML = '<i class="fa-regular fa-circle-exclamation"></i> Please fill all required fields and agree to the privacy policy.';
+                formStatus.classList.add('error');
+                return;
+            }
+            
+            if (!email.includes('@') || !email.includes('.')) {
+                formStatus.innerHTML = '<i class="fa-regular fa-circle-exclamation"></i> Please enter a valid email address.';
+                formStatus.classList.add('error');
+                return;
+            }
+            
+            // Simulate form submission
+            formStatus.innerHTML = '<i class="fa-regular fa-spinner fa-spin"></i> Sending message...';
+            formStatus.classList.add('sending');
+            
+            setTimeout(() => {
+                formStatus.innerHTML = '<i class="fa-regular fa-circle-check"></i> Message sent successfully! We\'ll get back to you within 24 hours.';
+                formStatus.classList.remove('sending');
+                formStatus.classList.add('success');
+                contactForm.reset();
+                
+                setTimeout(() => {
+                    formStatus.classList.remove('success');
+                    formStatus.innerHTML = '';
+                }, 5000);
+            }, 2000);
+        });
+        
+        // Input icon interactions
+        const inputs = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('focused');
+            });
+        });
+    });
+    
+    // Chatbot functionality - FIXED
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatbotBtn = document.getElementById('chatbotBtn');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotClose = document.getElementById('chatbotClose');
+        
+        if (chatbotBtn && chatbotWindow && chatbotClose) {
+            // Toggle chatbot window
+            chatbotBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                chatbotWindow.classList.toggle('active');
+            });
+            
+            // Close chatbot
+            chatbotClose.addEventListener('click', function() {
+                chatbotWindow.classList.remove('active');
+            });
+            
+            // Click outside to close (optional)
+            document.addEventListener('click', function(e) {
+                if (!chatbotBtn.contains(e.target) && 
+                    !chatbotWindow.contains(e.target) && 
+                    chatbotWindow.classList.contains('active')) {
+                    chatbotWindow.classList.remove('active');
+                }
+            });
+        }
+    });
+
+    
+document.addEventListener('DOMContentLoaded', function() {
+    // Agar multiple sections hain to
+    if (document.getElementById('related-products-1')) {
+        renderRelatedProducts('related-products-1', 'You May Also Like');
+    }
+    if (document.getElementById('related-products-2')) {
+        renderRelatedProducts('related-products-2', 'Best Sellers');
+    }
+});
+
+
+</script>
+
+<script src="js/bottom-navbar.js"></script>
+<script src="js/releted-product.js"></script>
+</body>
+</html>

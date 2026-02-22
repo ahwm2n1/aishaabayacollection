@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Shopping Cart | Abayas Collection</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/bottom-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cart.css">
+    
+    <!-- External Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement">
+        Free Shipping on Orders Above Rs. 5000
+    </div>
+
+    <!-- Navbar Section -->
+    <div id="navbar"></div>
+
+    
+    <!-- Bottom Navbar Container (mobile) -->
+    <div id="bottom-navbar"></div>
+    
+
+    <!-- Cart Hero Section - Updated to Light Color -->
+    <section class="cart-hero">
+        <div class="container">
+            <h1>Your Shopping Cart</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> 
+                <i class="fa-solid fa-angle-right"></i> 
+                <span>Cart</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Cart Section -->
+    <section class="cart-main">
+        <div class="container">
+            <div class="cart-grid">
+                <!-- Cart Items Section -->
+                <div class="cart-items-section">
+                    <div class="cart-header">
+                        <h2>
+                            Cart Items 
+                            <span class="cart-count-badge" id="cart-count">0</span>
+                        </h2>
+                        <button class="clear-cart" id="clear-cart" style="display: none;">
+                            <i class="fa-solid fa-trash-can"></i>
+                            Clear Cart
+                        </button>
+                    </div>
+
+                    <!-- Cart Items Container -->
+                    <div class="cart-items" id="cart-items">
+                        <!-- Cart items will be loaded here dynamically -->
+                    </div>
+
+                    <!-- Size Chart Section -->
+                    <div class="size-chart-section">
+                        <h3><i class="fa-solid fa-ruler-combined"></i> Size Guide</h3>
+                        <div class="size-chart-container">
+                            <table class="size-chart">
+                                <thead>
+                                    <tr>
+                                        <th>Size</th>
+                                        <th>Bust (inches)</th>
+                                        <th>Waist (inches)</th>
+                                        <th>Hips (inches)</th>
+                                        <th>Length (inches)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>XS</td><td>32-34</td><td>26-28</td><td>34-36</td><td>54</td></tr>
+                                    <tr><td>S</td><td>34-36</td><td>28-30</td><td>36-38</td><td>55</td></tr>
+                                    <tr><td>M</td><td>36-38</td><td>30-32</td><td>38-40</td><td>56</td></tr>
+                                    <tr><td>L</td><td>38-40</td><td>32-34</td><td>40-42</td><td>57</td></tr>
+                                    <tr><td>XL</td><td>40-42</td><td>34-36</td><td>42-44</td><td>58</td></tr>
+                                    <tr><td>XXL</td><td>42-44</td><td>36-38</td><td>44-46</td><td>59</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="size-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            If you're between sizes, we recommend sizing up for a comfortable fit
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Order Summary Section -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">Rs. 0</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="shipping">Rs. 200</span>
+                    </div>
+                    
+                    <div class="summary-row discount-row">
+                        <span>Total Discount</span>
+                        <span id="discount">Rs. 0</span>
+                    </div>
+                    
+                    <div class="summary-row total">
+                        <span>Total Amount</span>
+                        <span id="total">Rs. 0</span>
+                    </div>
+                    
+                    <!-- Free Shipping Progress -->
+                    <div class="shipping-progress" id="shipping-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="progress-text" id="progress-text">
+                            Add Rs. 5,000 more for free shipping
+                        </p>
+                    </div>
+                    
+                    <!-- WhatsApp Order Button -->
+                    <button class="whatsapp-btn" id="whatsapp-order">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Place Order via WhatsApp
+                    </button>
+                    
+                    <p class="whatsapp-note">
+                        <i class="fa-solid fa-shield-check"></i>
+                        Secure Ordering • No Payment Required Now
+                    </p>
+                    
+                    <!-- Continue Shopping -->
+                    <a href="products.html" class="continue-shopping">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Continue Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- You May Also Like Section -->
+    <section class="related-products">
+        <div class="container">
+            <h3>You May Also Like</h3>
+            
+            <div class="products-scroll-container">
+                <div class="products-scroll" id="scroll-products">
+                    <!-- Products will be loaded here dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+
+    <!-- Image Zoom Modal -->
+    <div class="modal" id="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/navbar.js"></script>
+    <script src="js/bottom-navbar.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/cart.js"></script>
+
+</body>
+</html>

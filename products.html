@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abayas Collection | Products</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/bottom-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/wishlist-sidebar.css">
+
+    <!-- External Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<!-- Swiper CSS and JS (already included in main page, add if missing) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Add this CSS for quick view modal -->
+<style>
+/* Quick View Modal Styles - copy from main.css ke modal wale styles */
+.quick-view-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.quick-view-modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    border-radius: 20px;
+    overflow: auto;
+    z-index: 10001;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.quick-view-modal.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 10002;
+}
+
+/* Rest of modal styles from main.css */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100000;
+}
+
+.notification {
+    background: #1e1e1e;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+</style>
+
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement">
+        Free Shipping on Orders Above Rs. 5000
+    </div>
+
+    <!-- Navbar Section -->
+    <div id="navbar"></div>
+
+
+    <!-- Bottom Navbar Container (mobile) -->
+    <div id="bottom-navbar"></div>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="text">
+                <h1>Abaya's Collection</h1>
+                <div>
+                    <a href="index.html" style="color: #000; text-decoration: none; font-size: 20px;">Home</a>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <a href="products.html" style="color: #d49287; text-decoration: none; font-size: 20px;">Abaya's</a>
+                </div>
+            </div>
+            <img src="images/abaya-3.webp" alt="Abaya Collection">
+        </div>
+    </section>
+
+    <!-- Products Header with Filter -->
+    <div class="products-header">
+        <h2>Abayas Collection <span class="product-count">(30 Products)</span></h2>
+        <div class="cart-count">Cart: <span id="cart">0</span></div>
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- FILTER & SORT BAR -->
+    <!-- ===================================== -->
+    <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <button class="filter-toggle" id="filterToggle">
+                <i class="fa-solid fa-sliders"></i>
+                Filter
+            </button>
+
+            <div class="sort-wrapper">
+                <select class="sort-select" id="sortSelect">
+                    <option value="default">Default Sorting</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="newest">New Arrivals</option>
+                    <option value="popular">Popularity</option>
+                </select>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================== -->
+    <!-- FILTER OVERLAY -->
+    <!-- ===================================== -->
+    <div class="filter-overlay" id="filterOverlay"></div>
+
+    <!-- ===================================== -->
+    <!-- FILTER SIDEBAR -->
+    <!-- ===================================== -->
+    <div class="filter-sidebar" id="filterSidebar">
+        <div class="filter-header">
+            <h3>Filter Products</h3>
+            <button class="filter-close" id="filterClose"><i class="fa-solid fa-times"></i></button>
+        </div>
+
+        <div class="filter-section">
+            <h4>Price Range</h4>
+            <div class="price-range">
+                <input type="range" class="price-slider" id="priceSlider" min="0" max="15000" value="15000" step="100">
+                <div class="price-values">
+                    <span>Rs. 0</span>
+                    <span>Rs. <span id="priceValue">15000</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h4>Size</h4>
+            <div class="filter-options" id="sizeFilters">
+                <label class="filter-option">
+                    <input type="checkbox" value="S"> Small (S)
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="M"> Medium (M)
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="L"> Large (L)
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="XL"> Extra Large (XL)
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="XXL"> XXL
+                </label>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h4>Color</h4>
+            <div class="filter-options" id="colorFilters">
+                <label class="filter-option">
+                    <input type="checkbox" value="Black"> Black
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="Brown"> Brown
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="Grey"> Grey
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="Green"> Green
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="Blue"> Blue
+                </label>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h4>Brand</h4>
+            <div class="filter-options" id="brandFilters">
+                <label class="filter-option">
+                    <input type="checkbox" value="Aisha"> Aisha
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="Premium"> Premium
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="Turkish"> Turkish
+                </label>
+            </div>
+        </div>
+
+        <button class="filter-btn" id="applyFilters">Apply Filters</button>
+    </div>
+
+
+    <!-- Products Grid -->
+    <div class="products" id="products"></div>
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+
+    <!-- JavaScript Files -->
+    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bottom-navbar.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist-sidebar.js"></script>
+</body>
+
+</html>

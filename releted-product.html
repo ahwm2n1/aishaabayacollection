@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/releted-product.css">
+            <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/about.css">
+     <!-- External Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<style>
+    
+/* =========================================
+   3. Announcement Bar
+   ========================================= */
+.announcement-bar {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.announcement-content {
+    display: inline-block;
+    animation: scrollText 25s linear infinite;
+}
+
+.text-scroll {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.separator {
+    opacity: 0.5;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+</style>
+
+<body>
+    
+        <!-- Announcement Bar -->
+    <div class="announcement">
+        Free Shipping on Orders Above Rs. 5000
+    </div>
+    <!--Logo-->
+
+    <!-- Navbar Section -->
+    <div id="navbar"></div>
+
+        <!-- Related Products Component - Copy this to any page -->
+    <section class="related-products">
+        <div class="container">
+            <h3>You May Also Like</h3>
+            
+            <div class="products-scroll-container">
+                <div class="products-scroll" id="scroll-products">
+                    <!-- Products will be loaded here dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- 1. Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <div class="text-scroll">
+                <span>Free Worldwide Shipping on Orders Over $150</span>
+                <span class="separator">*</span>
+                <span>New Collection: The Desert Rose Edit</span>
+                <span class="separator">*</span>
+                <span>Use Code WELCOME10 for 10% Off Your First Order</span>
+                <span class="separator">*</span>
+                <span>Free Worldwide Shipping on Orders Over $150</span>
+                <span class="separator">*</span>
+                <span>New Collection: The Desert Rose Edit</span>
+                <span class="separator">*</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/releted-product.js"></script>
+</body>
+</html>
